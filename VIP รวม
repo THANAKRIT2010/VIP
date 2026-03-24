@@ -1,0 +1,53 @@
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+
+local UI = Fluent:CreateWindow({
+    Title = "〔👑〕TK1669 VIP SCRIPT",
+    SubTitle = "https://discord.gg/tWndbkvXeQ",
+    TabWidth = 110,
+    Size = UDim2.fromOffset(520, 360),
+    Acrylic = true,
+    Theme = "Dark",
+    MinimizeKey = Enum.KeyCode.LeftControl
+})
+
+local function run(url)
+    task.spawn(function()
+        pcall(function()
+            loadstring(game:HttpGet(url))()
+        end)
+    end)
+end
+
+local plr = game.Players.LocalPlayer
+
+local tabs = {
+    main = UI:AddTab({ Title = "หน้าหลัก", Icon = "home" }),
+    combat = UI:AddTab({ Title = "ต่อสู้", Icon = "sword" }),
+    misc = UI:AddTab({ Title = "เครื่องมือ", Icon = "settings" }),
+    troll = UI:AddTab({ Title = "ป่วน", Icon = "smile" }),
+    esp = UI:AddTab({ Title = "ESP", Icon = "eye" })
+}
+
+tabs.main:AddButton({Title = "บิน", Callback = function() run("https://raw.githubusercontent.com/wackshopr-tech/script-roblox-all/refs/heads/main/SCRIPT-ALL-BY-WACK-SHOP/Fly%20V3/Fly-V3.lua") end})
+tabs.main:AddButton({Title = "กระโดดไม่จำกัด", Callback = function() run("https://raw.githubusercontent.com/wackshopr-tech/script-roblox-all/refs/heads/main/SCRIPT-ALL-BY-WACK-SHOP/Infinite%20Jump/Infinite-Jump.lua") end})
+tabs.main:AddButton({Title = "วิ่งเร็ว", Callback = function() local c=plr.Character if c and c:FindFirstChild("Humanoid") then c.Humanoid.WalkSpeed=100 end end})
+tabs.main:AddButton({Title = "วาปคลิก", Callback = function() run("https://raw.githubusercontent.com/wackshopr-tech/script-roblox-all/refs/heads/main/SCRIPT-ALL-BY-WACK-SHOP/Click%20TP/Click-TP.lua") end})
+tabs.main:AddButton({Title = "ทะลุกำแพง", Callback = function() run("https://raw.githubusercontent.com/wackshopr-tech/script-roblox-all/refs/heads/main/SCRIPT-ALL-BY-WACK-SHOP/Through%20the%20wall/main.lua") end})
+tabs.main:AddButton({Title = "หายตัว", Callback = function() run("https://pastebin.com/raw/3Rnd9rHf") end})
+tabs.main:AddButton({Title = "อมตะ", Callback = function() run("https://raw.githubusercontent.com/wackshopr-tech/script-roblox-all/refs/heads/main/SCRIPT-ALL-BY-WACK-SHOP/GOD-MAIN/GOD-MAIN.lua") end})
+
+tabs.combat:AddButton({Title = "ล็อคหัว", Callback = function() run("https://raw.githubusercontent.com/wackshopr-tech/script-roblox-all/refs/heads/main/SCRIPT-ALL-BY-WACK-SHOP/aimbot/aimbot.lua") end})
+tabs.combat:AddButton({Title = "ออร่าฆ่า NPC", Callback = function() run("https://raw.githubusercontent.com/wackshopr-tech/script-roblox-all/refs/heads/main/SCRIPT-ALL-BY-WACK-SHOP/kill-all-bot/killall-npc..lua") end})
+tabs.combat:AddButton({Title = "ขยายฮิตบ็อก", Callback = function() run("https://raw.githubusercontent.com/wackshopr-tech/script-roblox-all/refs/heads/main/SCRIPT-ALL-BY-WACK-SHOP/Hitbox/hitbox.lua") end})
+
+tabs.misc:AddButton({Title = "เพิ่ม FPS", Callback = function() run("https://raw.githubusercontent.com/wackshopr-tech/script-roblox-all/refs/heads/main/SCRIPT-ALL-BY-WACK-SHOP/Boots-fps/Boots-fps.lua") end})
+tabs.misc:AddButton({Title = "แมพสว่าง", Callback = function() run("https://raw.githubusercontent.com/wackshopr-tech/script-roblox-all/refs/heads/main/SCRIPT-ALL-BY-WACK-SHOP/Lighting/Lighting.lua") end})
+tabs.misc:AddButton({Title = "Infinite Yield", Callback = function() run("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source") end})
+
+tabs.troll:AddButton({Title = "หลุมดำ", Callback = function() run("https://pastebin.com/raw/pkZnU5P5") end})
+tabs.troll:AddButton({Title = "ชนกระเด็น", Callback = function() run("https://raw.githubusercontent.com/wackshopr-tech/script-roblox-all/refs/heads/main/SCRIPT-ALL-BY-WACK-SHOP/FLINGCORE/FLINGCORE.lua") end})
+
+tabs.esp:AddButton({Title = "ESP ผู้เล่น", Callback = function() run("https://raw.githubusercontent.com/wackshopr-tech/script-roblox-all/refs/heads/main/SCRIPT-ALL-BY-WACK-SHOP/EPS-MAP-ALL/EPS-MAP-ALL.lua") end})
+tabs.esp:AddButton({Title = "ESP NPC", Callback = function() run("https://raw.githubusercontent.com/wackshopr-tech/script-roblox-all/refs/heads/main/SCRIPT-ALL-BY-WACK-SHOP/ESP-NPC/ESP-NPC.lua") end})
+
+Fluent:Notify({Title = "TK1669 VIP", Content = "โหลดสำเร็จ", Duration = 4})
